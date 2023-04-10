@@ -1,0 +1,64 @@
+# Bare, All, Excess, Debug
+Log_Level: All
+
+# Directory relative to the command execution
+Log_Directory: logs
+
+# Directory containing run.py file
+Run_Directory: .
+
+# Check MCE after every command
+Constant_MCE_Checking: true
+
+Tests:
+- Name: test1
+  Binary: /path/to/binary1
+  Args:
+    - Arg1:
+        Option: "-a"
+        Values:
+          - Value1
+          - Value2
+    - Arg2:
+        Option: "-b"
+        Values:
+          - Value3
+          - Value4
+    - Arg3:
+        Option: "-c"
+        Constant: true
+        Values: [Value5]
+    - Arg4:
+        Option: "-d"
+        Flag: true
+- Name: test2
+  Binary: /path/to/binary2
+  Args:
+    - Arg1:
+        Option: "-a"
+        Values:
+          - Value1
+          - Value2
+    - Arg2:
+        Option: "-b"
+        Values:
+          - Value3
+          - Value4
+    - Arg3:
+        Option: "-c"
+        Values:
+          - Value5
+          - Value6
+    - Arg4:
+        Option: "-d"
+        Flag: true
+
+Core_Config:
+    Sockets:
+        - 0
+    SMT: false
+    All: true
+    Half: true
+    Quarters: [0,1,2,3]
+    CCDs: true
+    Cores: true

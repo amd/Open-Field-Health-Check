@@ -1,0 +1,92 @@
+# Bare, All, Excess, Debug
+Log_Level: All
+
+# Directory relative to the command execution
+Log_Directory: logs
+
+# Directory containing run.py file
+Run_Directory: .
+
+# Check MCE after every command
+Constant_MCE_Checking: true
+
+Tests:
+- Name: systester-brwein-quadradic-convergence-algorithm
+  Binary: $SYSTESTER_DIR/systester-cli
+  Args:
+    - Test:
+        Option: "-test"
+        Flag: true
+        Constant: true
+    - Threads:
+        Option: "-threads"
+        Constant: true
+        Values:
+          - 1
+    - Brwein-Quadradic-Convergence-Algorithm:
+        Option: "-qcborwein"
+        Values:
+            - 128K
+            - 256K
+            - 512K
+            - 1M
+            - 2M
+            - 4M
+            - 8M
+            - 16M
+            - 32M
+            - 64M
+            - 128M
+    - Truns:
+        Option: "-turns"
+        Values:
+            - 1
+            - 8
+            - 32
+            - 128
+            - 256
+
+- Name: systester-gauss-legendre
+  Binary: $SYSTESTER_DIR/systester-cli
+  Args:
+    - Test:
+        Option: "-test"
+        Flag: true
+        Constant: true
+    - Threads:
+        Option: "-threads"
+        Constant: true
+        Values:
+          - 1
+    - Gauss-Legendre-Algorithm:
+        Option: "-gausslg"
+        Values:
+            - 128K
+            - 256K
+            - 512K
+            - 1M
+            - 2M
+            - 4M
+            - 8M
+            - 16M
+            - 32M
+            - 64M
+            - 128M
+    - Truns:
+        Option: "-turns"
+        Values:
+            - 1
+            - 8
+            - 32
+            - 128
+            - 256
+
+Core_Config:
+    Sockets:
+        - 0
+    SMT: false
+    All: true
+    Half: true
+    Quarters: [0,1,2,3]
+    CCDs: true
+    Cores: true

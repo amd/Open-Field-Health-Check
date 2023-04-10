@@ -1,0 +1,13 @@
+Tests:
+- Name: test1
+  Binary: /path/to/binary1
+  Args:
+    - Arg1:
+        Option: "--arg-1"
+        Values:
+          - Value1
+          - Value2
+
+Core_Config:
+    SMT: false
+    All: true

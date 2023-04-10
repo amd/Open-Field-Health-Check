@@ -1,0 +1,25 @@
+Log_Level: All
+Log_Directory: logs
+Run_Directory: .
+
+Tests:
+- Name: test1
+  Binary: /path/to/binary1
+  Args:
+    - Arg1:
+        Option: "-a"
+        Values:
+          - Value1
+          - Value2
+    - Arg2:
+        Option: "-b"
+        Values:
+          - Value3
+          - Value4
+    - Arg3:
+        Option: "-c"
+        Constant: true
+        Values: "INVALID_NOT_A_LIST"
+    - Arg4:
+        Option: "-d"
+        Flag: true
